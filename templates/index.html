@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Placement Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>Student Placement Predictor</h1>
+            <p class="subtitle">Predict placement likelihood based on CGPA and IQ</p>
+            
+            <form id="predictionForm">
+                <div class="form-group">
+                    <label for="cgpa">CGPA (0-10)</label>
+                    <input 
+                        type="number" 
+                        id="cgpa" 
+                        name="cgpa" 
+                        step="0.01"
+                        min="0"
+                        max="10"
+                        placeholder="Enter your CGPA (e.g., 8.5)"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="iq">IQ Score</label>
+                    <input 
+                        type="number" 
+                        id="iq" 
+                        name="iq" 
+                        step="1"
+                        min="50"
+                        max="200"
+                        placeholder="Enter your IQ score (e.g., 120)"
+                        required
+                    >
+                </div>
+
+                <button type="submit" class="btn-predict">Predict</button>
+            </form>
+
+            <div id="resultContainer" class="result-container hidden">
+                <h2>Prediction Result</h2>
+                <div id="result" class="result"></div>
+                <button type="button" class="btn-reset" onclick="resetForm()">Make Another Prediction</button>
+            </div>
+
+            <div id="errorContainer" class="error-container hidden">
+                <p id="errorMessage"></p>
+            </div>
+
+            <div id="loadingContainer" class="loading-container hidden">
+                <div class="spinner"></div>
+                <p>Analyzing data...</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
