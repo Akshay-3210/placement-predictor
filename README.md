@@ -2,6 +2,12 @@
 
 A machine learning web application that predicts whether a student will get placement based on their CGPA and IQ score.
 
+## 🚀 Live Demo
+
+**Try it now:** [https://placement-predictor-kyui.onrender.com](https://placement-predictor-kyui.onrender.com)
+
+The app is deployed and running on Render's free tier. Note: The first request may take 10-30 seconds as the service wakes up from inactivity.
+
 ## Features
 
 - **ML Model**: Logistic Regression classifier trained on student placement data
